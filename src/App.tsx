@@ -11,14 +11,16 @@ export default function App() {
 
   useEffect(() => auth.onAuthStateChanged(setUser), [auth]);
 
-  return (
-    <div>
-      {!user && (
-        <StyledFirebaseAuth
-          uiConfig={FIREBASE_AUTH_UI_CONFIG}
-          firebaseAuth={auth}
-        />
-      )}
+  return user ? (
+    <div className="container">
+      <header></header>
+      <main></main>
+      <div></div>
     </div>
+  ) : (
+    <StyledFirebaseAuth
+      uiConfig={FIREBASE_AUTH_UI_CONFIG}
+      firebaseAuth={auth}
+    />
   );
 }

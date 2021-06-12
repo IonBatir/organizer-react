@@ -10,3 +10,5 @@ export const FIREBASE_AUTH_UI_CONFIG = {
     signInSuccessWithAuthResult: () => false,
   },
 };
+
+export const DATE_FORMAT = "DD-MM-YYYY";

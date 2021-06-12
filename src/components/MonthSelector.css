@@ -1,0 +1,14 @@
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p span {
+  margin: 0 2rem;
+  text-align: center;
+  width: 200px;
+}
+
+p i {
+  cursor: pointer;
+}

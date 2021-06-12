@@ -32,7 +32,7 @@ export default function App() {
         />
       </main>
       <div>
-        <Organizer />
+        <Organizer selectedDate={selectedDate} />
       </div>
     </div>
   ) : (

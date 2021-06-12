@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import React from "react";
 import firebase from "firebase/app";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import dayjs from "dayjs";
@@ -11,11 +11,11 @@ import { Calendar, MonthSelector, Organizer } from "./components";
 
 export default function App() {
   dayjs.locale("ro");
-  const { auth } = useContext(Context);
-  const [user, setUser] = useState<firebase.User | null>();
-  const [selectedDate, setSelectedDate] = useState(dayjs());
+  const { auth } = React.useContext(Context);
+  const [user, setUser] = React.useState<firebase.User | null>();
+  const [selectedDate, setSelectedDate] = React.useState(dayjs());
 
-  useEffect(() => auth.onAuthStateChanged(setUser), [auth]);
+  React.useEffect(() => auth.onAuthStateChanged(setUser), [auth]);
 
   return user ? (
     <div className="container">
@@ -26,7 +26,7 @@ export default function App() {
         />
       </header>
       <main>
-        <Calendar />
+        <Calendar selectedDate={selectedDate} />
       </main>
       <div>
         <Organizer />

@@ -26,7 +26,10 @@ export default function App() {
         />
       </header>
       <main>
-        <Calendar selectedDate={selectedDate} />
+        <Calendar
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+        />
       </main>
       <div>
         <Organizer />
